@@ -38,6 +38,13 @@ while True:
         break
     else:
         attempt+=1
+# 
+    for i in range(len(guess)):
+        if guess[i]==word[i]:
+            hint[i]=word[i]
+    # print("HINT:",hint)
+    print("HINT:","".join(hint))
+
 # ____________________________SUGGEST THE FIRST LETTER______________________
     if attempt==8 and "".join(hint) =="_"*len(word):
         # for i in word:
@@ -46,7 +53,7 @@ while True:
 
 
 # ____________________If length of guess is not equal to length of word_______________________
-    if len(guess) != len(word):
+    if len(guess) != len(word)and guess!=hint:
         print(f"Length of your word is {len(word)}")
 
 
@@ -92,16 +99,3 @@ print("HAVE A NICE DAY")
         
 
 
-
-
-
-
-
-
-
-# # _______________________GIVE HINT TO USER______________________
-#         for i in range(len(word)):
-#             if i<len(guess) and guess[i]==word[i]:
-#                 hint[i]=guess[i]
-#         print("Hint:","".join(hint))
-#         print("Try Again.")
